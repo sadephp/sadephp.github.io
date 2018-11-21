@@ -1,3 +1,5 @@
+#### CLI
+
 Sade provides a simple CLI to render components through the terminal.
 
 Example:

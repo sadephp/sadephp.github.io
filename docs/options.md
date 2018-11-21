@@ -1,3 +1,5 @@
+#### Options
+
 Default options:
 
 ```php

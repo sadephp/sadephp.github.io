@@ -1,0 +1,30 @@
+<div class="sade-m5hvfy" >
+    <h3>Count: <span id="count">0</span></h3>
+    <button id="plusOne">+1</button>
+    <button id="minusOne">-1</button>
+</div><script src="https://unpkg.com/mobx@5.6.0/lib/mobx.umd.js" type="text/javascript" data-sade-class="sade-m5hvfy" ></script><script type="text/javascript" data-sade-class="sade-m5hvfy" >
+(function () {
+    var counter = mobx.observable({
+        count: 0,
+        update: mobx.action(function (val) {
+            this.count += val;
+        }),
+    });
+
+    mobx.when(function () {
+        document.getElementById('count').innerHTML = counter.count;
+    });
+
+    mobx.autorun(function () {
+
+    });
+
+    document.getElementById('plusOne').addEventListener('click', function () {
+        counter.update(+1);
+    });
+
+    document.getElementById('minusOne').addEventListener('click', function () {
+        counter.update(-1);
+    });
+}());
+</script>

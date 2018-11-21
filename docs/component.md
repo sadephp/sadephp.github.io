@@ -1,3 +1,5 @@
+#### Component
+
 Sade components takes it insperation from other components packages so you may be familiar. A component can have a template, script, style and php data.
 
 Example:
@@ -46,19 +48,19 @@ If combining `src` with a `external` attribute, then `src` attribute will be pas
 <style src="accordion.css" external />
 ```
 
-## Template tag
+### Template tag
 
 The template tag contains [Twig](https://twig.symfony.com/doc/2.x/) (2.x) code and are compiled to HTML at runtime and cached if configured.
 
 All attributes will be passed along (expect scoped attribute) and a class will be added when template is:
 - scoped attribute on any tag or global `scoped` option.
 
-## Script tag
+### Script tag
 
 All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when script is:
 - scoped attribute on any tag or global `scoped` option.
 
-## Style tag
+### Style tag
 
 All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when style is:
 - scoped attribute on any tag or global `scoped` option.
@@ -105,7 +107,7 @@ CSS Output:
 }
 ```
 
-## PHP data
+### PHP data
 
 PHP data use regulare `<?php ?>` tags. The returned array look like this:
 
@@ -145,7 +147,7 @@ PHP data use regulare `<?php ?>` tags. The returned array look like this:
 * `methods` are a key/function array for Twig functions. You can access data here `$this->greeting` equals `greetings` from data array.
 * `props` are a array of properties to request from the parent component. Only parent properties is needed to be listed, not properties on a component html tag.
 
-## Custom functions
+### Custom functions
 
 You can add custom functions or create plugins and bind them with:
 
@@ -167,7 +169,7 @@ return [
 ];
 ```
 
-## Parent components
+### Parent components
 
 Example using a parent component with properties:
 
@@ -195,7 +197,7 @@ Example of the child component:
 ?>
 ```
 
-## Children prop
+### Children prop
 
 We inject a `children` variable into Twig so you can render children html of a component html tag.
 
@@ -217,7 +219,7 @@ Example of parent component:
 </template>
 ```
 
-## Inherit functions
+### Inherit functions
 
 Instead of a child component add property names to `props` array they can use a inherit function. The inherit function is a custom function you write.
 

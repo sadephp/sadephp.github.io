@@ -1,3 +1,5 @@
+#### Render
+
 To render a Sade component you create a new instanceof the `\Sade\Sade` class with the source directory where you're components exists. If no directory is given then `getcwd()` will be used.
 
 Example:
