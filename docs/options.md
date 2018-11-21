@@ -9,21 +9,19 @@ Default options:
     // Will cache output html so if you render same component again with only
     // the html and not script and style tags again.
     'cache'    => true,
+    // Global scoped value.
+    'scoped'   => false,
     'script'   => [
         // Point to your own script generator class.
         'class'   => \Sade\Component\Script::class,
         // Enable script tag rendering.
         'enabled' => true,
-        // Scope script and template.
-        'scoped'  => false,
     ],
     'style'    => [
         // Point to your own style generator class.
         'class'   => \Sade\Component\Style::class,
         // Enable style tag rendering.
         'enabled' => true,
-        'scoped'  => false,
-        // Scope style, script and template.
         'tag'     => 'script',
     ],
     'template' => [
@@ -31,8 +29,6 @@ Default options:
         'class'   => \Sade\Component\Template::class,
         // Enable template tag rendering.
         'enabled' => true,
-        // Scope script and template.
-        'scoped'  => false,
     ],
 ]
 

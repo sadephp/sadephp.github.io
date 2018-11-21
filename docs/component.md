@@ -50,21 +50,18 @@ If combining `src` with a `external` attribute, then `src` attribute will be pas
 
 The template tag contains [Twig](https://twig.symfony.com/doc/2.x/) (2.x) code and are compiled to HTML at runtime and cached if configured.
 
-All attributes will be passed along and a class will be added when template is:
-- scoped attribute on template tag or `template.scoped` option
-- scoped attrbiute on script tag or `script.scoped` option
-- scoped attrbitue on style tag or `style.scoped` option
+All attributes will be passed along (expect scoped attribute) and a class will be added when template is:
+- scoped attribute on any tag or global `scoped` option.
 
 ## Script tag
 
-All attributes will be passed along and `data-sade-class` will be added when script is:
-- scoped attribute on template tag or `template.scoped` option
-- scoped attrbiute on script tag or `script.scoped` option
-- scoped attrbitue on style tag or `style.scoped` option
+All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when script is:
+- scoped attribute on any tag or global `scoped` option.
 
 ## Style tag
 
-All attributes will be passed along except scoped attribute. `data-sade-class` will be added with the div class name when scoped. The style tag will scope CSS with a uniq class name when scoped. Only scoped options from style tag will scope the CSS and not template or script scoped options.
+All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when style is:
+- scoped attribute on any tag or global `scoped` option.
 
 The style tag will be rendered by default but can be configured to be rendered as a style tag.
 
