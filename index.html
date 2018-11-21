@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sade Documentation</title>
+    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+  </head>
+  <body>
+    <div id="docute"></div>
+    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
+    <script>
+      new Docute({
+        target: '#docute',
+        sidebar: [
+            {
+                title: 'Documentation',
+                links: [
+                    { title: 'Introduction', link: '/' },
+                    { title: 'CLI', link: '/docs/cli' },
+                    { title: 'Component', link: '/docs/component' },
+                    { title: 'Options', link: '/docs/options' },
+                    { title: 'Config', link: '/docs/config' },
+                    { title: 'Render', link: '/docs/render' }
+                ]
+            }
+        ]
+      })
+    </script>
+  </body>
+</html>
