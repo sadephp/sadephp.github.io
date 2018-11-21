@@ -11,6 +11,19 @@
     <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
     <script>
       new Docute({
+        editLinkBase: 'https://github.com/sadephp/sadephp.github.io/tree/master',
+        editLinkText: 'Edit this page on GitHub',
+        highlight: ['php', 'html'],
+        nav: [
+          {
+            title: 'Home',
+            link: '/'
+          },
+          {
+            title: 'GitHub',
+            link: 'https://github.com/sadephp/sade'
+          }
+        ],
         target: '#docute',
         sidebar: [
           {
