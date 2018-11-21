@@ -4,6 +4,14 @@
 
 Sade, a library for creating PHP Components with [Twig](https://twig.symfony.com/doc/2.x/) (2.x). This package will not do any preprocessing or somthing like that.
 
+#### Installation
+
+```
+composer require sade/sade
+```
+
+Or use the [boilerplate](https://github.com/sadephp/boilerplate)
+
 #### Example
 
 ```php
