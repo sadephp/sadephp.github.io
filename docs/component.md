@@ -9,7 +9,7 @@ Example:
     <p>{{ greeting }} World!</p>
 </template>
 
-<style scoped>
+<style>
     p {
         font-size: 2em;
         text-align: center;
@@ -27,7 +27,7 @@ Example:
 ?>
 ```
 
-Template, script and style tags has a `src` attribute that can include other files instead of having all in the same file. All other attributes (except scoped and some special ones) will be passed along to div (when scoped), script and style tags, some additional attributes will be added, read more about this below under each tag.
+Template, script and style tags has a `src` attribute that can include other files instead of having all in the same file. All other attributes will be passed along to div (when scoped), script and style tags, some additional attributes will be added, read more about this below under each tag.
 
 Example:
 
@@ -52,30 +52,33 @@ If combining `src` with a `external` attribute, then `src` attribute will be pas
 
 The template tag contains [Twig](https://twig.symfony.com/doc/2.x/) (2.x) code and are compiled to HTML at runtime and cached if configured.
 
-All attributes will be passed along (expect scoped attribute) and a class will be added when template is:
-- scoped attribute on any tag or global `scoped` option.
+All attributes will be passed along.
 
 ### Script tag
 
-All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when script is:
-- scoped attribute on any tag or global `scoped` option.
+All attributes will be passed along.
 
 ### Style tag
 
-All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when style is:
-- scoped attribute on any tag or global `scoped` option.
+All attributes will be passed along (expect scoped attribute) and `data-sade-class` will be added when style is scoped.
 
 The style tag will be rendered by default but can be configured to be rendered as a style tag.
 
 Example:
 
-```html
-<style scoped>
+```php
+<style>
     p {
         font-size: 2em;
         text-align: center;
     }
 </style>
+
+<?php
+    return [
+        'scoped' => true
+    ];
+?>
 ```
 
 CSS Output:
@@ -89,13 +92,19 @@ CSS Output:
 
 To style scoped div:
 
-```html
-<style scoped>
+```php
+<style>
     {
         font-size: 2em;
         text-align: center;
     }
 </style>
+
+<?php
+    return [
+        'scoped' => true
+    ];
+?>
 ```
 
 CSS Output:
@@ -136,7 +145,9 @@ PHP data use regulare `<?php ?>` tags. The returned array look like this:
         'props'      => [
             // Request props and data from parent component.
             // Request data from top parent component.
-        ]
+        ],
+        // Scoped option.
+        'scoped'     => false,
     ];
 ?>
 ```
@@ -146,6 +157,7 @@ PHP data use regulare `<?php ?>` tags. The returned array look like this:
 * `data` are a function that returns a array or array of data.
 * `methods` are a key/function array for Twig functions. You can access data here `$this->greeting` equals `greetings` from data array.
 * `props` are a array of properties to request from the parent component. Only parent properties is needed to be listed, not properties on a component html tag.
+* `scoped` are a bool that's determines if the output css, html and style should be scoped or not.
 
 ### Custom functions
 
